@@ -1,0 +1,10 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro');
+
+.digital-clock {
+  position: absolute;
+  top: 235px;
+  left: 50%;
+  transform: translate3d(-50%, 0, 0);
+  font-size: 2em;
+  font-family: 'Source Code Pro', monospace;
+}
