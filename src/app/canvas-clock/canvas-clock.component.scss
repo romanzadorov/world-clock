@@ -1,6 +1,34 @@
 canvas {
-  position: absolute;
-  right: 44%;
-  width: 200px;
-  height: 200px;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 70% 30%;
+  grid-gap: 1em;
+}
+
+.wrapper > div {
+  background: #eee;
+  padding: 1em;
+}
+.wrapper > div:nth-child(odd) {
+  background: #ddd;
+}
+
+.clock-area-wrapper {
+  display: grid;
+  grid-template-columns: 30% 70%;
+  grid-gap: 1em;
+}
+
+.canvas-clock-area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.digital-clock-area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

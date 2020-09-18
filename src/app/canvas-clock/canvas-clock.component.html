@@ -1,1 +1,50 @@
-<canvas #canvas></canvas>
+<div class="wrapper">
+  <div class="clock-area-wrapper">
+    <div class="canvas-clock-area">
+      <canvas #canvas></canvas>
+    </div>
+    <div class="digital-clock-area">
+      <app-digital-clock-moment></app-digital-clock-moment>
+    </div>
+  </div>
+
+  <div>
+    <div class="" *ngIf="listOfContinents">
+      <label class="usa-label" for="continent">Continents</label>
+      <div>
+        <select
+          class="usa-select"
+          id="continent"
+          name="continent"
+          (change)="selectContinent($event)"
+        >
+          <option value>- Select -</option>
+          <option
+            *ngFor="let continent of listOfContinents"
+            [value]="continent"
+          >
+            {{ continent }}
+          </option>
+        </select>
+      </div>
+    </div>
+
+    <div class="" *ngIf="listOfLocations">
+      <label class="usa-label" for="country">Locations</label>
+      {{ listOfLocations.length }}
+      <div *ngIf="listOfLocations.length !== 0">
+        <select
+          class="usa-select"
+          id="country"
+          name="country"
+          (change)="selectLocation($event)"
+        >
+          <option value>- Select -</option>
+          <option *ngFor="let country of listOfLocations" [value]="country">
+            {{ country }}
+          </option>
+        </select>
+      </div>
+    </div>
+  </div>
+</div>
