@@ -1,0 +1,15 @@
+<div class="">
+  <div class="actions">
+    <input matInput #filter placeholder="Search a city" />
+    <a class="cancel" id="cancel" (click)="close('cancel')">Cancel</a>
+  </div>
+  <mat-dialog-content id="form-dialog">
+    <div class="countries-list">
+      <ul *ngIf="countries">
+        <li *ngFor="let country of countries" (click)="close(country)">
+          {{ country.capital }}, {{ country.name }}
+        </li>
+      </ul>
+    </div>
+  </mat-dialog-content>
+</div>

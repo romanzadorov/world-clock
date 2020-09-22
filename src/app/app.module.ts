@@ -10,6 +10,10 @@ import { MomentModule } from "ngx-moment";
 import { AppService } from "./app.service";
 import { APP_BASE_HREF } from "@angular/common";
 import { HttpClientModule } from "@angular/common/http";
+import { SearchComponent } from "./search/search.component";
+import { MatDialogModule } from "@angular/material/dialog";
+import { FontAwesomeModule } from "@fortawesome/angular-fontawesome";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 @NgModule({
   declarations: [
@@ -17,8 +21,18 @@ import { HttpClientModule } from "@angular/common/http";
     CanvasClockComponent,
     DigitalClockComponent,
     DigitalClockMomentComponent,
+    SearchComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, MomentModule, HttpClientModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    MomentModule,
+    HttpClientModule,
+    MatDialogModule,
+    FontAwesomeModule,
+    BrowserAnimationsModule,
+  ],
+  entryComponents: [SearchComponent],
   providers: [AppService, { provide: APP_BASE_HREF, useValue: "/" }],
   bootstrap: [AppComponent],
 })

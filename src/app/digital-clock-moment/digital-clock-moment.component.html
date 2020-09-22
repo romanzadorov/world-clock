@@ -1,3 +1,7 @@
 <div class="digital-clock-moment">
-  {{ clock }}
+  <p>{{ city?.capital }}, {{ city?.name }},</p>
+  <p>
+    {{ clock }}
+  </p>
+  <img [src]="flagUrl" alt="country flag" class="flag" />
 </div>

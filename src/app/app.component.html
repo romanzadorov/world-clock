@@ -1,7 +1,25 @@
-<div class="clock-wrapper">
-  <app-canvas-clock></app-canvas-clock>
-  <app-canvas-clock></app-canvas-clock>
-  <app-canvas-clock></app-canvas-clock>
+<h1>World Clock</h1>
+
+<div class="actions-wrapper">
+  <div class="">
+    <a class="edit">Edit</a>
+  </div>
+  <div class="">
+    <fa-icon class="add" [icon]="faPlus" (click)="add()"></fa-icon>
+  </div>
+</div>
+
+<div class="main-content-wrapper">
+  <div *ngIf="cities" class="cities-wrapper">
+    <div class="clock-wrapper" *ngFor="let city of cities">
+      <div class="canvas-clock">
+        <app-canvas-clock [city]="city"></app-canvas-clock>
+      </div>
+      <div class="digital-clock">
+        <app-digital-clock-moment [city]="city"></app-digital-clock-moment>
+      </div>
+    </div>
+  </div>
 </div>
 
 <router-outlet></router-outlet>

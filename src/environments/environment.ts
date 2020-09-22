@@ -1,6 +1,7 @@
 export const environment = {
   production: false,
-  worldtimeapiBaseUrl: 'http://worldtimeapi.org/api/timezone'
+  worldtimeapiBaseUrl: "http://worldtimeapi.org/api/timezone",
+  restCountriesBaseUrl: "https://restcountries.eu/rest/v2",
 };
 
 /*

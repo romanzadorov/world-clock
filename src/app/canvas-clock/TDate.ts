@@ -1,8 +1,22 @@
+import { Moment } from "moment";
+
 /**
  * Easily Destructure Date Object
  */
 export class TDate {
-  constructor(readonly date: Date) {}
+  constructor(readonly date: Date, readonly momentDate: Moment) {}
+
+  get momentSeconds(): number {
+    return this.momentDate.seconds();
+  }
+
+  get momentMinutes(): number {
+    return this.momentDate.minutes();
+  }
+
+  get momentHours(): number {
+    return this.momentDate.hours();
+  }
 
   get seconds(): number {
     return this.date.getSeconds();

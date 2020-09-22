@@ -1,5 +1,35 @@
+.actions-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.edit,
+.add {
+  cursor: pointer;
+}
+
+.main-content-wrapper {
+  width: 80rem;
+}
+
+.cities-wrapper {
+  width: 100%;
+  // display: grid;
+  // grid-template-columns: 100%;
+  // // background: #ddd;
+  // grid-gap: 1rem;
+}
+
 .clock-wrapper {
   grid-gap: 0.5em;
   display: grid;
-  grid-template-columns: 100%;
+  // grid-template-columns: 100%;
+  grid-template-columns: 30% 70%;
+  background: #ddd;
+  margin-bottom: 0.5rem;
+  .canvas-clock {
+  }
+
+  .digital-clock {
+  }
 }
