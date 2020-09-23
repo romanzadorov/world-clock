@@ -9,7 +9,7 @@ import { Observable, of, Subject } from "rxjs";
 export class AppService {
   worldtimeapiBaseUrl = environment.worldtimeapiBaseUrl;
   restCountriesBaseUrl = environment.restCountriesBaseUrl;
-  countries: any;
+  // countries: any;
   coutriesEvent: EventEmitter<any> = new EventEmitter();
 
   timeObservable: Subject<any> = new Subject();

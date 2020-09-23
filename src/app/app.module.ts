@@ -14,6 +14,7 @@ import { SearchComponent } from "./search/search.component";
 import { MatDialogModule } from "@angular/material/dialog";
 import { FontAwesomeModule } from "@fortawesome/angular-fontawesome";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { CountryFlagComponent } from "./country-flag/country-flag.component";
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
     DigitalClockComponent,
     DigitalClockMomentComponent,
     SearchComponent,
+    CountryFlagComponent,
   ],
   imports: [
     BrowserModule,

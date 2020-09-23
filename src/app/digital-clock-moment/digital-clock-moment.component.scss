@@ -1,8 +1,28 @@
 @import url("https://fonts.googleapis.com/css?family=Source+Code+Pro");
 
 .digital-clock-moment {
+  display: flex;
+  margin: 1em;
+  justify-content: space-around;
+  text-align: center;
+  align-items: center;
 }
 
-.flag {
-  height: 5rem;
+.digital-clock {
+  font-size: large;
+  font-weight: 900;
+  margin: 1em;
+  width: 75%;
+  line-height: 3rem;
+}
+
+.country-flag-mini {
+  margin: 1rem;
+  text-align: center;
+}
+
+.flag-mini {
+  height: 3rem;
+  width: 5rem;
+  max-width: 5rem;
 }

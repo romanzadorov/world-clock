@@ -24,8 +24,8 @@ import * as moment from "moment";
 })
 export class CanvasClockComponent implements OnInit, OnDestroy, AfterViewInit {
   @ViewChild("canvas", { static: false }) canvasRef: ElementRef;
-  @Input() public width = 200;
-  @Input() public height = 200;
+  @Input() public width = 150;
+  @Input() public height = 150;
   @Input() city: Object;
   canvasContext: CanvasRenderingContext2D;
   subscription: Subscription;

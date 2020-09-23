@@ -13,4 +13,9 @@ body {
   line-height: 1.6;
   display: flex;
   justify-content: center;
+  background-color: #222831;
+}
+
+.custom-modalbox > mat-dialog-container {
+  background-color: #222831 !important;
 }

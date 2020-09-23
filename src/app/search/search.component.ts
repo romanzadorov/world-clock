@@ -20,6 +20,7 @@ export class SearchComponent implements OnInit {
   @ViewChild("filter", { static: false }) filter: ElementRef;
   keyUpSubscription: Subscription;
   countries: any;
+  allCountries: Array<Object>;
   // selectedCities: Array<Object>;
   selectedCity: Object;
 
@@ -55,6 +56,7 @@ export class SearchComponent implements OnInit {
           this.countries = [];
           // this.countries = data;
           this.countries.push(data);
+          localStorage.setItem("cities", JSON.stringify(this.countries));
         },
         (error) => {
           console.log("error", error);
@@ -66,12 +68,10 @@ export class SearchComponent implements OnInit {
   getAllCountriesData() {
     this.appService.getAllCountries().subscribe((res: Array<Object>) => {
       // console.log(res);
-      this.appService.countries = res;
+      // this.appService.countries = res;
+      this.allCountries = res;
       this.countries = res;
-      this.countries.forEach((element) => {
-        // console.log(element.capital, element.timezones);
-      });
-      // console.log(this.countries);
+      localStorage.setItem("allCountries", JSON.stringify(this.allCountries));
     });
   }
 
@@ -79,12 +79,8 @@ export class SearchComponent implements OnInit {
     if (event === "cancel") {
       this.dialogRef.close();
     } else {
-      console.log(event);
       this.selectedCity = event;
-      // this.selectedCities.push(event);
-      // console.log(this.selectedCities);
-
-      this.dialogRef.close();
+      this.dialogRef.close(event);
     }
   }
 }

@@ -1,7 +1,8 @@
 <div class="digital-clock-moment">
-  <p>{{ city?.capital }}, {{ city?.name }},</p>
-  <p>
+  <div class="digital-clock">
     {{ clock }}
-  </p>
-  <img [src]="flagUrl" alt="country flag" class="flag" />
+  </div>
+  <div class="country-flag-mini">
+    <img *ngIf="isEdit" [src]="flagUrl" alt="country flag" class="flag-mini" />
+  </div>
 </div>

@@ -4,6 +4,8 @@ import {
   Component,
   Input,
   OnInit,
+  Output,
+  EventEmitter,
 } from "@angular/core";
 import * as moment from "moment";
 import { AppService } from "../app.service";
@@ -18,6 +20,8 @@ export class DigitalClockMomentComponent implements OnInit, AfterViewInit {
   @Input() time: any;
   @Input() city: Object;
   flagUrl: string;
+  @Input() isEdit: boolean;
+  @Output() isTimerOn = new EventEmitter();
 
   constructor(
     public appService: AppService,
@@ -33,7 +37,6 @@ export class DigitalClockMomentComponent implements OnInit, AfterViewInit {
         .add(utcInput, "hours")
         .format("dddd, MMMM Do YYYY, h:mm:ss a")
         .toUpperCase();
-      this.appService.timeObservable.next(this.clock);
     }, 1000);
   }
 

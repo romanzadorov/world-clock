@@ -1,35 +1,64 @@
 .actions-wrapper {
   display: flex;
   justify-content: space-between;
+  font-size: x-large;
+  font-weight: 900;
 }
 
 .edit,
 .add {
   cursor: pointer;
+  color: #eeeeee;
 }
 
 .main-content-wrapper {
-  width: 80rem;
+  width: 60rem;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  color: #eeeeee;
 }
 
 .cities-wrapper {
-  width: 100%;
-  // display: grid;
-  // grid-template-columns: 100%;
-  // // background: #ddd;
-  // grid-gap: 1rem;
 }
 
 .clock-wrapper {
-  grid-gap: 0.5em;
-  display: grid;
-  // grid-template-columns: 100%;
-  grid-template-columns: 30% 70%;
-  background: #ddd;
+  display: flex;
+  background: #bdbdbd;
   margin-bottom: 0.5rem;
+  width: 100%;
   .canvas-clock {
   }
 
   .digital-clock {
   }
+}
+
+.add-block {
+  grid-gap: 0.5em;
+  display: grid;
+  grid-template-columns: 30% 70%;
+  margin-bottom: 0.5rem;
+  width: 80%;
+}
+
+.flag {
+  width: 20%;
+}
+
+.delete-button-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: red;
+  cursor: pointer;
+  width: 20%;
+}
+
+.delete-button {
+  text-decoration: unset;
+  font-size: x-large;
+  color: white;
 }
