@@ -1,4 +1,9 @@
 <div class="country-flag">
-  <p class="capital-country">{{ city?.capital }}, {{ city?.name }}</p>
+  <p class="capital-country" *ngIf="city?.capital; else cityName">
+    {{ city?.capital }}, {{ city?.name }}
+  </p>
+  <ng-template #cityName>
+    {{ city.name }}
+  </ng-template>
   <img [src]="flagUrl" alt="country flag" class="flag" />
 </div>

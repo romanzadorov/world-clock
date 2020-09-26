@@ -34,32 +34,13 @@ export class AppService {
   }
 
   searchCountries(searchText: string): Observable<Object> {
-    console.log("searchText", searchText);
     if (searchText && searchText !== "") {
       const searchValue = searchText.toLowerCase().trim();
-
-      console.log(searchValue);
-
-      // const url = `${this.restCountriesBaseUrl}/name/${searchValue}`;
       // capital:
       const url = `${this.restCountriesBaseUrl}/capital/${searchValue}`;
-
-      // let filteredResult;
-      // filteredResult = this.countries.filter((countryObj) => {
-      //   console.log(countryObj);
-      //   console.log(countryObj.capital.toLowerCase().includes(searchValue));
-      //   return countryObj.capital.toLowerCase().includes(searchValue);
-      // });
-
-      // console.log(filteredResult);
-      // return filteredResult as Observable<Object[]>;
-
       return this.http.get(url);
     } else {
-      // if search value is not provided, make the countrie array empty
-      this.coutriesEvent.emit([]);
-      console.log("No search value was provided");
-      return of([]);
+      return of("noValueEntered");
     }
   }
 }

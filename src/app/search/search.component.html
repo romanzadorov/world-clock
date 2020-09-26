@@ -1,15 +1,31 @@
 <div class="">
   <div class="actions">
-    <input matInput class="search-field" #filter placeholder="Search a city" />
+    <input
+      matInput
+      class="search-field"
+      #filter
+      (keyup)="keyUp.next($event)"
+      placeholder="Search a city"
+    />
     <a class="cancel" id="cancel" (click)="close('cancel')">Cancel</a>
   </div>
   <mat-dialog-content id="form-dialog">
-    <div class="countries-list">
-      <ul *ngIf="countries">
+    <div
+      class="countries-list"
+      [ngClass]="isNotFound == true ? 'noResults' : ''"
+    >
+      <ul *ngIf="countries && !isNotFound; else notFound">
         <li *ngFor="let country of countries" (click)="close(country)">
-          {{ country.capital }}, {{ country.name }}
+          <span *ngIf="country.capital; else countryName">
+            {{ country.capital }}, {{ country.name }}
+          </span>
+          <ng-template #countryName>
+            {{ country.name }}
+          </ng-template>
         </li>
       </ul>
+      <!-- <ng-template #notFound class="noResults">No Results Found</ng-template> -->
     </div>
+    <ng-template #notFound class="noResults">No Results Found</ng-template>
   </mat-dialog-content>
 </div>

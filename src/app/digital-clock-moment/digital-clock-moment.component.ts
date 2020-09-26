@@ -31,9 +31,11 @@ export class DigitalClockMomentComponent implements OnInit, AfterViewInit {
   ngOnInit() {
     this.flagUrl = this.city["flag"];
     const utcInput = this.getUTCinput();
+    console.log(utcInput);
 
     setInterval(() => {
       this.clock = moment()
+        .utc()
         .add(utcInput, "hours")
         .format("dddd, MMMM Do YYYY, h:mm:ss a")
         .toUpperCase();
@@ -44,7 +46,17 @@ export class DigitalClockMomentComponent implements OnInit, AfterViewInit {
 
   getUTCinput() {
     let utcInput;
-    const utc = this.city["timezones"][0] as string;
+    let utc;
+
+    switch (this.city["capital"]) {
+      case "Washington, D.C.":
+        utc = this.city["timezones"][8] as string;
+        break;
+
+      default:
+        utc = this.city["timezones"][0] as string;
+        break;
+    }
     const utcValue = utc.split("UTC")[1];
     const operator = utcValue[0];
     const hours = utcValue.slice(1, 3);
@@ -74,6 +86,12 @@ export class DigitalClockMomentComponent implements OnInit, AfterViewInit {
     }
 
     const hoursMinutes = `${operator}${hoursValue}.${minutesValue}`;
-    return (utcInput = Number(hoursMinutes));
+    utcInput = Number(hoursMinutes);
+    this.clock = moment()
+      .utc()
+      .add(utcInput, "hours")
+      .format("dddd, MMMM Do YYYY, h:mm:ss a")
+      .toUpperCase();
+    return utcInput;
   }
 }

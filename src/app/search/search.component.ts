@@ -1,13 +1,18 @@
-import { Component, ElementRef, OnInit, ViewChild } from "@angular/core";
-import { MatDialogRef } from "@angular/material";
-import { fromEvent, Subscription, throwError } from "rxjs";
 import {
-  switchMap,
+  Component,
+  ElementRef,
+  OnDestroy,
+  OnInit,
+  ViewChild,
+} from "@angular/core";
+import { MatDialogRef } from "@angular/material";
+import { of, Subject, Subscription } from "rxjs";
+import {
   map,
   debounceTime,
-  mergeAll,
   catchError,
   distinctUntilChanged,
+  mergeMap,
 } from "rxjs/operators";
 import { AppService } from "../app.service";
 
@@ -16,13 +21,15 @@ import { AppService } from "../app.service";
   templateUrl: "./search.component.html",
   styleUrls: ["./search.component.scss"],
 })
-export class SearchComponent implements OnInit {
+export class SearchComponent implements OnInit, OnDestroy {
   @ViewChild("filter", { static: false }) filter: ElementRef;
   keyUpSubscription: Subscription;
   countries: any;
   allCountries: Array<Object>;
-  // selectedCities: Array<Object>;
   selectedCity: Object;
+  isNotFound = false;
+
+  public keyUp = new Subject<KeyboardEvent>();
 
   constructor(
     public dialogRef: MatDialogRef<SearchComponent>,
@@ -31,35 +38,49 @@ export class SearchComponent implements OnInit {
 
   ngOnInit() {
     this.getAllCountriesData();
-    this.appService.coutriesEvent.subscribe((evt) => {
-      this.countries = evt;
-      console.log(this.countries);
-    });
+  }
+
+  ngOnDestroy(): void {
+    this.keyUpSubscription.unsubscribe();
   }
 
   ngAfterViewInit() {
-    this.keyUpSubscription = fromEvent(this.filter.nativeElement, "keyup")
+    this.keyUpSubscription = this.keyUp
       .pipe(
+        map((event) => event.target["value"]),
         debounceTime(500),
-        map((event: Event) => (<HTMLInputElement>event.target).value),
         distinctUntilChanged(),
-        switchMap((value) => this.appService.searchCountries(value)),
-        mergeAll(),
-        catchError((err) => {
-          console.log("Handling error locally and rethrowing it...", err);
-          return throwError(err);
-        })
+        mergeMap((search) =>
+          this.appService.searchCountries(search).pipe(
+            catchError((err) => {
+              console.log("Handling error locally and rethrowing it...", err);
+              this.isNotFound = true;
+              return of({ results: null });
+            })
+          )
+        )
       )
       .subscribe(
         (data) => {
-          console.log("data", data);
-          this.countries = [];
-          // this.countries = data;
-          this.countries.push(data);
-          localStorage.setItem("cities", JSON.stringify(this.countries));
+          if (data && Array.isArray(data)) {
+            this.countries = [];
+            this.countries.push(data[0]);
+            localStorage.setItem("cities", JSON.stringify(this.countries));
+          }
+          if (data["results"] === null) {
+            console.log("no search results");
+          }
+          if (data === "noValueEntered") {
+            console.log("No Value Entered");
+            this.countries = this.allCountries;
+            this.isNotFound = false;
+          }
         },
         (error) => {
-          console.log("error", error);
+          if (error && error["status"] == 404) {
+            console.log("error", error);
+            this.isNotFound = true;
+          }
         },
         () => console.log("HTTP request completed.")
       );
@@ -67,8 +88,6 @@ export class SearchComponent implements OnInit {
 
   getAllCountriesData() {
     this.appService.getAllCountries().subscribe((res: Array<Object>) => {
-      // console.log(res);
-      // this.appService.countries = res;
       this.allCountries = res;
       this.countries = res;
       localStorage.setItem("allCountries", JSON.stringify(this.allCountries));
