@@ -62,6 +62,8 @@ export class SearchComponent implements OnInit, OnDestroy {
       )
       .subscribe(
         (data) => {
+          console.log(data);
+
           if (data && Array.isArray(data)) {
             this.countries = [];
             this.countries.push(data[0]);
@@ -90,6 +92,8 @@ export class SearchComponent implements OnInit, OnDestroy {
     this.appService.getAllCountries().subscribe((res: Array<Object>) => {
       this.allCountries = res;
       this.countries = res;
+      console.log(this.allCountries);
+
       localStorage.setItem("allCountries", JSON.stringify(this.allCountries));
     });
   }

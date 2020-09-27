@@ -2,6 +2,7 @@ import { EventEmitter, Injectable } from "@angular/core";
 import { environment } from "../environments/environment";
 import { HttpClient } from "@angular/common/http";
 import { Observable, of, Subject } from "rxjs";
+import { countriesJSON } from "../assets/countries";
 
 @Injectable({
   providedIn: "root",
@@ -11,6 +12,7 @@ export class AppService {
   restCountriesBaseUrl = environment.restCountriesBaseUrl;
   // countries: any;
   coutriesEvent: EventEmitter<any> = new EventEmitter();
+  countriesJSON = countriesJSON;
 
   timeObservable: Subject<any> = new Subject();
 
@@ -30,6 +32,9 @@ export class AppService {
 
   getAllCountries() {
     const url = `${this.restCountriesBaseUrl}/all`;
+    console.log(countriesJSON);
+
+    // return of(countriesJSON);
     return this.http.get(url);
   }
 

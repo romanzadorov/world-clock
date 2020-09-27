@@ -14,8 +14,25 @@ body {
   display: flex;
   justify-content: center;
   background-color: #222831;
+  height: 100%;
+  min-height: calc(100vh - 60px);
+}
+
+#bg-img {
+  background: url(../src/assets/img/clock_3.jpg);
+  background: rgba(68, 68, 68, 0.9), url(../src/assets/img/clock_3.jpg);
+  background-attachment: fixed;
+  background-size: cover;
 }
 
 .custom-modalbox > mat-dialog-container {
   background-color: #222831 !important;
+}
+
+#main-footer {
+  text-align: center;
+  padding: 1rem;
+  color: #bdbdbd;
+  height: 60px;
+  font-weight: 800;
 }

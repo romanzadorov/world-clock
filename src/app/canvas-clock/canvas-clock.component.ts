@@ -51,66 +51,7 @@ export class CanvasClockComponent implements OnInit, OnDestroy, AfterViewInit {
     public changeDetection: ChangeDetectorRef
   ) {}
 
-  ngOnInit() {
-    // console.log(this.city);
-    // let utcInput;
-    // const utc = this.city["timezones"][0] as string;
-    // const utcValue = utc.split("UTC")[1];
-    // console.log("utcValue", utcValue);
-    // const operator = utcValue[0];
-    // console.log("operator", operator);
-    // // const hours = Number(utcValue.slice(1, 3));
-    // const hours = utcValue.slice(1, 3);
-    // console.log("hours", hours);
-    // // const minutes = Number(utcValue.slice(4, 6));
-    // const minutes = utcValue.slice(4, 6);
-    // console.log("minutes", minutes);
-    // let hoursValue = "";
-    // let minutesValue = "";
-    // if (hours) {
-    //   if (hours[0] === "0") {
-    //     hoursValue = hours.split("")[1].toString();
-    //   } else {
-    //     hoursValue = hours;
-    //   }
-    // }
-    // console.log("hours", hours);
-    // console.log("hoursValue", hoursValue);
-    // if (minutes) {
-    //   switch (minutes) {
-    //     case "00":
-    //       minutesValue = "0";
-    //       break;
-    //     case "30":
-    //       minutesValue = "5";
-    //       break;
-    //     case "45":
-    //       minutesValue = "75";
-    //       break;
-    //   }
-    // }
-    // const hoursMinutes = `${operator}${hoursValue}.${minutesValue}`;
-    // utcInput = Number(hoursMinutes);
-    // console.log("minutesValue", minutesValue);
-    // console.log("hoursMinutes", Number(hoursMinutes));
-    // const time1 = moment().format("dddd, MMMM Do YYYY, h:mm:ss a");
-    // console.log(time1);
-    // // const time2 = moment().format("dddd, MMMM Do YYYY, h:mm:ss a");
-    // // console.log(time2);
-    // const time3 = moment()
-    //   .add(utcInput, "hours")
-    //   .utc()
-    //   .format("dddd, MMMM Do YYYY, h:mm:ss a");
-    // console.log(time3);
-    // setInterval(() => {
-    //   this.clock = moment()
-    //     .add(utcInput, "hours")
-    //     .format("dddd, MMMM Do YYYY, h:mm:ss a")
-    //     .toUpperCase();
-    //   this.appService.timeObservable.next(this.clock);
-    //   // console.log(this.clock);
-    // }, 1000);
-  }
+  ngOnInit() {}
 
   selectContinent(event) {
     if (event.target.value) {
@@ -244,7 +185,7 @@ export class CanvasClockComponent implements OnInit, OnDestroy, AfterViewInit {
       momentSeconds,
       momentMinutes,
       momentHours,
-    } = new TDate(new Date(), moment().add(utcInput, "hours"));
+    } = new TDate(new Date(), moment().utc().add(utcInput, "hours"));
 
     const hourHand =
       ((momentHours % 12) * Math.PI) / 6 +
@@ -273,7 +214,20 @@ export class CanvasClockComponent implements OnInit, OnDestroy, AfterViewInit {
 
   getUTCinput() {
     let utcInput;
-    const utc = this.city["timezones"][0] as string;
+    // const utc = this.city["timezones"][0] as string;
+
+    let utc;
+
+    switch (this.city["capital"]) {
+      case "Washington, D.C.":
+        utc = this.city["timezones"][8] as string;
+        break;
+
+      default:
+        utc = this.city["timezones"][0] as string;
+        break;
+    }
+
     const utcValue = utc.split("UTC")[1];
     const operator = utcValue[0];
     const hours = utcValue.slice(1, 3);
@@ -303,6 +257,13 @@ export class CanvasClockComponent implements OnInit, OnDestroy, AfterViewInit {
     }
 
     const hoursMinutes = `${operator}${hoursValue}.${minutesValue}`;
-    return (utcInput = Number(hoursMinutes));
+    // return (utcInput = Number(hoursMinutes));
+    utcInput = Number(hoursMinutes);
+    this.clock = moment()
+      .utc()
+      .add(utcInput, "hours")
+      .format("dddd, MMMM Do YYYY, h:mm:ss a")
+      .toUpperCase();
+    return utcInput;
   }
 }
