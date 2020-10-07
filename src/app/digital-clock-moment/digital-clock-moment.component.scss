@@ -31,6 +31,10 @@
 }
 
 @media screen and (min-width: 769px) and (max-width: 1170px) {
+  .digital-clock-moment {
+    margin: 0;
+    height: 162px;
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -52,17 +56,13 @@
 
 @media screen and (max-width: 376px) {
   .digital-clock-display {
-    // line-height: 1.5rem;
-    // font-size: unset;
     width: 110px;
     font-size: 1.4rem;
     margin: auto;
   }
 
   .digital-clock-moment {
-    // margin: 0;
     height: 4.5rem;
-    // text-align: center;
   }
 }
 

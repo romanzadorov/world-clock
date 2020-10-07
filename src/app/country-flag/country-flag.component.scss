@@ -18,6 +18,26 @@
 }
 
 @media screen and (min-width: 769px) and (max-width: 1170px) {
+  .flag {
+    height: 3rem;
+    width: 6rem;
+    max-width: 6rem;
+  }
+
+  .country-flag {
+    margin: 0;
+    text-align: center;
+    font-weight: 800;
+    height: 162px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    text-align: left;
+  }
+
+  .capital-country {
+    margin: 0;
+  }
 }
 
 @media screen and (max-width: 768px) {

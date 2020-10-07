@@ -18,3 +18,24 @@
 
 .digital-clock-area {
 }
+
+@media screen and (min-width: 1171px) {
+}
+
+@media screen and (min-width: 769px) and (max-width: 1170px) {
+  .wrapper > div {
+    padding: 0.3rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+}
+
+@media screen and (max-width: 415px) {
+}
+
+@media screen and (max-width: 376px) {
+}
+
+@media screen and (max-width: 280px) {
+}
