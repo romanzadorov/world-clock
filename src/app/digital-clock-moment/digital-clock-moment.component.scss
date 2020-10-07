@@ -8,7 +8,7 @@
   align-items: center;
 }
 
-.digital-clock {
+.digital-clock-display {
   font-size: large;
   font-weight: 900;
   margin: 1em;
@@ -25,4 +25,62 @@
   height: 3rem;
   width: 5rem;
   max-width: 5rem;
+}
+
+@media screen and (min-width: 1171px) {
+}
+
+@media screen and (min-width: 769px) and (max-width: 1170px) {
+}
+
+@media screen and (max-width: 768px) {
+}
+
+@media screen and (max-width: 500px) {
+  .digital-clock-display {
+    line-height: 1.5rem;
+    font-size: unset;
+    width: 130px;
+  }
+
+  .digital-clock-moment {
+    margin: 0;
+    max-height: 4.5rem;
+    // text-align: center;
+  }
+}
+
+@media screen and (max-width: 376px) {
+  .digital-clock-display {
+    // line-height: 1.5rem;
+    // font-size: unset;
+    width: 110px;
+    font-size: 1.4rem;
+    margin: auto;
+  }
+
+  .digital-clock-moment {
+    // margin: 0;
+    height: 4.5rem;
+    // text-align: center;
+  }
+}
+
+@media screen and (max-width: 321px) {
+  .digital-clock-display {
+    // line-height: 1.5rem;
+    // font-size: unset;
+    width: 110px;
+    font-size: 1.2rem;
+    margin: auto;
+  }
+
+  .digital-clock-moment {
+    // margin: 0;
+    height: 4.5rem;
+    // text-align: center;
+  }
+}
+
+@media screen and (max-width: 280px) {
 }

@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, OnInit } from "@angular/core";
+import { AfterViewInit, Component, HostListener, OnInit } from "@angular/core";
 import { Subscription } from "rxjs";
 import { MatDialog } from "@angular/material/dialog";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
@@ -28,6 +28,7 @@ export class AppComponent implements OnInit, AfterViewInit {
   cities: Array<Object> = [];
   dialogRef: any;
   isEdit = false;
+  innerWidth: Number;
 
   constructor(private dialog: MatDialog) {}
 
@@ -36,6 +37,13 @@ export class AppComponent implements OnInit, AfterViewInit {
     if (savedCities && savedCities.length) {
       this.cities = savedCities;
     }
+    this.innerWidth = window.innerWidth;
+  }
+
+  @HostListener("window:resize", ["$event"])
+  onResize(event) {
+    this.innerWidth = window.innerWidth;
+    console.log(this.innerWidth);
   }
 
   ngAfterViewInit() {}

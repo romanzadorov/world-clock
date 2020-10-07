@@ -7,6 +7,7 @@ import { Component, Input, OnInit } from "@angular/core";
 })
 export class CountryFlagComponent implements OnInit {
   @Input() city: Object;
+  @Input() innerWidth: Number;
   flagUrl: string;
 
   constructor() {}

@@ -13,3 +13,55 @@
   width: 8rem;
   max-width: 8rem;
 }
+
+@media screen and (min-width: 1171px) {
+}
+
+@media screen and (min-width: 769px) and (max-width: 1170px) {
+}
+
+@media screen and (max-width: 768px) {
+}
+
+@media screen and (max-width: 415px) {
+  .country-flag {
+    text-align: left;
+    line-height: 1.2rem;
+    margin: 0.5rem;
+    position: absolute;
+    height: 3.5rem;
+    display: flex;
+  }
+
+  .capital-country {
+    // margin: 0.4rem;
+    margin: auto;
+  }
+
+  .flag {
+    margin: auto;
+  }
+}
+
+@media screen and (max-width: 376px) {
+  .country-flag {
+    text-align: left;
+    line-height: 1.2rem;
+    margin: 0.5rem;
+    position: absolute;
+    height: 3.5rem;
+    display: flex;
+  }
+
+  .capital-country {
+    // margin: 0.4rem;
+    margin: auto;
+  }
+
+  .flag {
+    margin: auto;
+  }
+}
+
+@media screen and (max-width: 280px) {
+}

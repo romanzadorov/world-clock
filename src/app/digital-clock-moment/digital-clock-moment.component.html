@@ -1,8 +1,15 @@
 <div class="digital-clock-moment">
-  <div class="digital-clock">
+  <div *ngIf="innerWidth && innerWidth > 500" class="digital-clock-display">
     {{ clock }}
   </div>
-  <div class="country-flag-mini">
+  <div
+    *ngIf="innerWidth <= 500"
+    class="digital-clock-display"
+    [ngClass]="{ isEdit: isEdit }"
+  >
+    {{ clockMin }}
+  </div>
+  <div class="country-flag-mini" [ngClass]="{ isEdit: isEdit }">
     <img *ngIf="isEdit" [src]="flagUrl" alt="country flag" class="flag-mini" />
   </div>
 </div>

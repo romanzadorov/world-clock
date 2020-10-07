@@ -17,11 +17,13 @@ import { AppService } from "../app.service";
 })
 export class DigitalClockMomentComponent implements OnInit, AfterViewInit {
   clock: any;
+  clockMin: any;
   @Input() time: any;
   @Input() city: Object;
   flagUrl: string;
   @Input() isEdit: boolean;
   @Output() isTimerOn = new EventEmitter();
+  @Input() innerWidth: Number;
 
   constructor(
     public appService: AppService,
@@ -32,12 +34,19 @@ export class DigitalClockMomentComponent implements OnInit, AfterViewInit {
     this.flagUrl = this.city["flag"];
     const utcInput = this.getUTCinput();
     console.log(utcInput);
+    console.log(this.innerWidth);
 
     setInterval(() => {
       this.clock = moment()
         .utc()
         .add(utcInput, "hours")
         .format("dddd, MMMM Do YYYY, h:mm:ss a")
+        .toUpperCase();
+
+      this.clockMin = moment()
+        .utc()
+        .add(utcInput, "hours")
+        .format("h:mm a")
         .toUpperCase();
     }, 1000);
   }

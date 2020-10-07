@@ -5,5 +5,10 @@
   <ng-template #cityName>
     {{ city.name }}
   </ng-template>
-  <img [src]="flagUrl" alt="country flag" class="flag" />
+  <img
+    *ngIf="innerWidth && innerWidth > 500"
+    [src]="flagUrl"
+    alt="country flag"
+    class="flag"
+  />
 </div>
