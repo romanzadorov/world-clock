@@ -90,9 +90,11 @@ export class SearchComponent implements OnInit, OnDestroy {
 
   getAllCountriesData() {
     this.appService.getAllCountries().subscribe((res: Array<Object>) => {
-      this.allCountries = res;
-      this.countries = res;
-      console.log(this.allCountries);
+      // sorting the list of cities by country capital
+      this.allCountries = res.sort((a, b) =>
+        a["capital"] < b["capital"] ? -1 : a["capital"] > b["capital"] ? 1 : 0
+      );
+      this.countries = [...this.allCountries];
 
       localStorage.setItem("allCountries", JSON.stringify(this.allCountries));
     });

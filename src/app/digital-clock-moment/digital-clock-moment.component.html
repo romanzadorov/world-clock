@@ -1,9 +1,9 @@
 <div class="digital-clock-moment">
-  <div *ngIf="innerWidth && innerWidth > 500" class="digital-clock-display">
+  <div *ngIf="innerWidth && innerWidth > 540" class="digital-clock-display">
     {{ clock }}
   </div>
   <div
-    *ngIf="innerWidth <= 500"
+    *ngIf="innerWidth <= 540"
     class="digital-clock-display"
     [ngClass]="{ isEdit: isEdit }"
   >

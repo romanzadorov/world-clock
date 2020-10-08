@@ -63,7 +63,17 @@ export class AppComponent implements OnInit, AfterViewInit {
     this.dialogRef.afterClosed().subscribe((result) => {
       if (result) {
         const selectedCity = this.dialogRef.componentInstance.selectedCity;
-        this.cities.push(selectedCity);
+
+        // if found, returns the country object, else returns undefined
+        let existedCity = this.cities.find(
+          (city) => city["capital"] === selectedCity.capital
+        );
+
+        // if it's a new city, add it.
+        if (!existedCity) {
+          this.cities.push(selectedCity);
+        }
+
         localStorage.setItem("cities", JSON.stringify(this.cities));
       }
     });

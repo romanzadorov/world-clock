@@ -23,6 +23,7 @@ body {
   background: rgba(68, 68, 68, 0.9), url(../src/assets/img/clock_3.jpg);
   background-attachment: fixed;
   background-size: cover;
+  width: 1000px;
 }
 
 .custom-modalbox > mat-dialog-container {
@@ -40,6 +41,16 @@ body {
 @media screen and (min-width: 1171px) {
 }
 
+@media screen and (max-width: 1025px) {
+  #bg-img {
+    background-size: 700px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 700px;
+  }
+}
+
 @media screen and (min-width: 769px) and (max-width: 1170px) {
   body {
     line-height: 1.1;
@@ -48,23 +59,65 @@ body {
   #bg-img {
     background-position: center;
     background-size: 800px;
+    width: 800px;
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 769px) {
+  #bg-img {
+    background-size: 768px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 768px;
+  }
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 541px) {
+}
+
+@media screen and (max-width: 415px) {
   body {
     margin: 0;
     line-height: 1.5;
   }
 
   #bg-img {
-    background-size: 500px;
+    background-size: 415px;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    width: 415px;
+  }
+}
+
+@media screen and (max-width: 376px) {
+  body {
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  #bg-img {
+    background-size: 375px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 375px;
+  }
+}
+
+@media screen and (max-width: 321px) {
+  body {
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  #bg-img {
+    background-size: 320px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 320px;
   }
 }
 
@@ -74,9 +127,16 @@ body {
     font-family: "Noto Sans JP", sans-serif;
     line-height: 1.6;
     display: flex;
-    // justify-content: center;
     background-color: #000000;
     height: 100%;
     min-height: calc(100vh - 60px);
+  }
+
+  #bg-img {
+    background-size: 280px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 280px;
   }
 }
