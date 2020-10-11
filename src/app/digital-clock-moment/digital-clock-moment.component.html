@@ -1,5 +1,6 @@
 <div class="digital-clock-moment">
   <div *ngIf="innerWidth && innerWidth > 540" class="digital-clock-display">
+    <p>{{ utc }}</p>
     {{ clock }}
   </div>
   <div
@@ -7,6 +8,7 @@
     class="digital-clock-display"
     [ngClass]="{ isEdit: isEdit }"
   >
+    <p>{{ utc }}</p>
     {{ clockMin }}
   </div>
   <div class="country-flag-mini" [ngClass]="{ isEdit: isEdit }">

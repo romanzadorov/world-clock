@@ -18,6 +18,7 @@ import { AppService } from "../app.service";
 export class DigitalClockMomentComponent implements OnInit, AfterViewInit {
   clock: any;
   clockMin: any;
+  utc: any;
   @Input() time: any;
   @Input() city: Object;
   flagUrl: string;
@@ -55,18 +56,18 @@ export class DigitalClockMomentComponent implements OnInit, AfterViewInit {
 
   getUTCinput() {
     let utcInput;
-    let utc;
+    // let utc;
 
     switch (this.city["capital"]) {
       case "Washington, D.C.":
-        utc = this.city["timezones"][8] as string;
+        this.utc = this.city["timezones"][8] as string;
         break;
 
       default:
-        utc = this.city["timezones"][0] as string;
+        this.utc = this.city["timezones"][0] as string;
         break;
     }
-    const utcValue = utc.split("UTC")[1];
+    const utcValue = this.utc.split("UTC")[1];
     const operator = utcValue[0];
     const hours = utcValue.slice(1, 3);
     const minutes = utcValue.slice(4, 6);

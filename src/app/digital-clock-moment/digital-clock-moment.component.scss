@@ -14,6 +14,13 @@
   margin: 1em;
   width: 75%;
   line-height: 3rem;
+  text-align: left;
+
+  p {
+    margin: 0;
+    font-size: small;
+    text-align: left;
+  }
 }
 
 .country-flag-mini {
@@ -48,6 +55,13 @@
     line-height: 1.5rem;
     font-size: unset;
     width: 130px;
+    text-align: left;
+
+    p {
+      margin: 0;
+      font-size: small;
+      text-align: left;
+    }
   }
 
   .digital-clock-moment {
@@ -62,6 +76,13 @@
     width: 110px;
     font-size: 1.4rem;
     margin: auto;
+    text-align: left;
+
+    p {
+      margin: 0;
+      font-size: small;
+      text-align: left;
+    }
   }
 
   .digital-clock-moment {
@@ -76,6 +97,13 @@
     width: 110px;
     font-size: 1.2rem;
     margin: auto;
+    text-align: left;
+
+    p {
+      margin: 0;
+      font-size: small;
+      text-align: left;
+    }
   }
 
   .digital-clock-moment {
