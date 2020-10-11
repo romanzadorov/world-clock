@@ -1,6 +1,6 @@
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
-import { AppComponent } from "./app.component";
+import { ContentWrapperComponent } from "./content-wrapper/content-wrapper.component";
 
 const routes: Routes = [
   {
@@ -10,7 +10,7 @@ const routes: Routes = [
   },
   {
     path: "world-clock",
-    component: AppComponent,
+    component: ContentWrapperComponent,
     data: { title: "World Clock" },
   },
   { path: "**", redirectTo: "/world-clock", pathMatch: "full" },

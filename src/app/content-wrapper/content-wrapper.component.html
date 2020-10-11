@@ -1,0 +1,64 @@
+<div id="bg-img">
+  <header class="header">
+    <h1>World Clock</h1>
+  </header>
+
+  <main class="main-content-wrapper">
+    <section class="actions-wrapper">
+      <div class="">
+        <a
+          *ngIf="cities.length && !isEdit"
+          class="edit"
+          (click)="action('edit')"
+          >Edit</a
+        >
+        <a *ngIf="cities.length && isEdit" class="edit" (click)="action('done')"
+          >Done</a
+        >
+      </div>
+      <div class="">
+        <fa-icon class="add" [icon]="faPlus" (click)="add()"></fa-icon>
+      </div>
+    </section>
+
+    <section class="">
+      <div *ngIf="cities" class="cities-wrapper">
+        <div class="clock-wrapper" *ngFor="let city of cities">
+          <div class="add-block" [ngClass]="{ isEdit: isEdit }">
+            <div class="canvas-clock">
+              <app-canvas-clock [city]="city"></app-canvas-clock>
+            </div>
+            <div class="digital-clock" [ngClass]="{ isEdit: isEdit }">
+              <app-digital-clock-moment
+                [city]="city"
+                [isEdit]="isEdit"
+                (isTimerOn)="getTimerEvent($event)"
+                [innerWidth]="innerWidth"
+              ></app-digital-clock-moment>
+            </div>
+          </div>
+          <div *ngIf="!isEdit" class="flag" [ngClass]="{ isEdit: isEdit }">
+            <app-country-flag
+              [city]="city"
+              [innerWidth]="innerWidth"
+            ></app-country-flag>
+          </div>
+          <div
+            *ngIf="isEdit"
+            class="delete-button-wrapper"
+            [@slideInOut]
+            (click)="delete(city)"
+          >
+            <a
+              id="delete-button"
+              href="#"
+              class="delete-button"
+              [ngClass]="{ isEdit: isEdit }"
+              >Delete</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>

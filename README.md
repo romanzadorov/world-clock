@@ -14,5 +14,6 @@ Variation of Analog and Digital clocks
 3. npm i
 
 4. Make the repository Public
-5. ng build
-6. npm run deploy
+5. Set the gh-pages branch to /root
+6. ng build
+7. npm run deploy
