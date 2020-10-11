@@ -328,7 +328,7 @@ webpackContext.id = "./node_modules/moment/locale sync recursive ^\\.\\/.*$";
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div id=\"bg-img\">\n  <header class=\"header\">\n    <h1>World Clock</h1>\n  </header>\n\n  <main class=\"main-content-wrapper\">\n    <section class=\"actions-wrapper\">\n      <div class=\"\">\n        <a\n          *ngIf=\"cities.length && !isEdit\"\n          class=\"edit\"\n          (click)=\"action('edit')\"\n          >Edit</a\n        >\n        <a *ngIf=\"cities.length && isEdit\" class=\"edit\" (click)=\"action('done')\"\n          >Done</a\n        >\n      </div>\n      <div class=\"\">\n        <fa-icon class=\"add\" [icon]=\"faPlus\" (click)=\"add()\"></fa-icon>\n      </div>\n    </section>\n\n    <section class=\"\">\n      <div *ngIf=\"cities\" class=\"cities-wrapper\">\n        <div class=\"clock-wrapper\" *ngFor=\"let city of cities\">\n          <div class=\"add-block\" [ngClass]=\"{ isEdit: isEdit }\">\n            <div class=\"canvas-clock\">\n              <app-canvas-clock [city]=\"city\"></app-canvas-clock>\n            </div>\n            <div class=\"digital-clock\" [ngClass]=\"{ isEdit: isEdit }\">\n              <app-digital-clock-moment\n                [city]=\"city\"\n                [isEdit]=\"isEdit\"\n                (isTimerOn)=\"getTimerEvent($event)\"\n                [innerWidth]=\"innerWidth\"\n              ></app-digital-clock-moment>\n            </div>\n          </div>\n          <div *ngIf=\"!isEdit\" class=\"flag\" [ngClass]=\"{ isEdit: isEdit }\">\n            <app-country-flag\n              [city]=\"city\"\n              [innerWidth]=\"innerWidth\"\n            ></app-country-flag>\n          </div>\n          <div\n            *ngIf=\"isEdit\"\n            class=\"delete-button-wrapper\"\n            [@slideInOut]\n            (click)=\"delete(city)\"\n          >\n            <a\n              id=\"delete-button\"\n              href=\"#\"\n              class=\"delete-button\"\n              [ngClass]=\"{ isEdit: isEdit }\"\n              >Delete</a\n            >\n          </div>\n        </div>\n      </div>\n    </section>\n  </main>\n</div>\n\n<router-outlet></router-outlet>\n<app-footer></app-footer>\n"
+module.exports = "<router-outlet></router-outlet>\n<app-footer></app-footer>\n"
 
 /***/ }),
 
@@ -340,6 +340,17 @@ module.exports = "<div id=\"bg-img\">\n  <header class=\"header\">\n    <h1>Worl
 /***/ (function(module, exports) {
 
 module.exports = "<div class=\"wrapper\">\r\n  <div class=\"clock-area-wrapper\">\r\n    <div class=\"canvas-clock-area\">\r\n      <canvas #canvas id=\"canvas\"></canvas>\r\n    </div>\r\n    <!-- <div class=\"digital-clock-area\">\r\n      <app-digital-clock-moment></app-digital-clock-moment>\r\n    </div> -->\r\n  </div>\r\n\r\n  <!-- <div>\r\n    <div class=\"\" *ngIf=\"listOfContinents\">\r\n      <label class=\"usa-label\" for=\"continent\">Continents</label>\r\n      <div>\r\n        <select\r\n          class=\"usa-select\"\r\n          id=\"continent\"\r\n          name=\"continent\"\r\n          (change)=\"selectContinent($event)\"\r\n        >\r\n          <option value>- Select -</option>\r\n          <option\r\n            *ngFor=\"let continent of listOfContinents\"\r\n            [value]=\"continent\"\r\n          >\r\n            {{ continent }}\r\n          </option>\r\n        </select>\r\n      </div>\r\n    </div>\r\n\r\n    <div class=\"\" *ngIf=\"listOfLocations\">\r\n      <label class=\"usa-label\" for=\"country\">Locations</label>\r\n      {{ listOfLocations.length }}\r\n      <div *ngIf=\"listOfLocations.length !== 0\">\r\n        <select\r\n          class=\"usa-select\"\r\n          id=\"country\"\r\n          name=\"country\"\r\n          (change)=\"selectLocation($event)\"\r\n        >\r\n          <option value>- Select -</option>\r\n          <option *ngFor=\"let country of listOfLocations\" [value]=\"country\">\r\n            {{ country }}\r\n          </option>\r\n        </select>\r\n      </div>\r\n    </div>\r\n  </div> -->\r\n</div>\r\n"
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/index.js!./src/app/content-wrapper/content-wrapper.component.html":
+/*!******************************************************************************************!*\
+  !*** ./node_modules/raw-loader!./src/app/content-wrapper/content-wrapper.component.html ***!
+  \******************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div id=\"bg-img\">\n  <header class=\"header\">\n    <h1>World Clock</h1>\n  </header>\n\n  <main class=\"main-content-wrapper\">\n    <section class=\"actions-wrapper\">\n      <div class=\"\">\n        <a\n          *ngIf=\"cities.length && !isEdit\"\n          class=\"edit\"\n          (click)=\"action('edit')\"\n          >Edit</a\n        >\n        <a *ngIf=\"cities.length && isEdit\" class=\"edit\" (click)=\"action('done')\"\n          >Done</a\n        >\n      </div>\n      <div class=\"\">\n        <fa-icon class=\"add\" [icon]=\"faPlus\" (click)=\"add()\"></fa-icon>\n      </div>\n    </section>\n\n    <section class=\"\">\n      <div *ngIf=\"cities\" class=\"cities-wrapper\">\n        <div class=\"clock-wrapper\" *ngFor=\"let city of cities\">\n          <div class=\"add-block\" [ngClass]=\"{ isEdit: isEdit }\">\n            <div class=\"canvas-clock\">\n              <app-canvas-clock [city]=\"city\"></app-canvas-clock>\n            </div>\n            <div class=\"digital-clock\" [ngClass]=\"{ isEdit: isEdit }\">\n              <app-digital-clock-moment\n                [city]=\"city\"\n                [isEdit]=\"isEdit\"\n                (isTimerOn)=\"getTimerEvent($event)\"\n                [innerWidth]=\"innerWidth\"\n              ></app-digital-clock-moment>\n            </div>\n          </div>\n          <div *ngIf=\"!isEdit\" class=\"flag\" [ngClass]=\"{ isEdit: isEdit }\">\n            <app-country-flag\n              [city]=\"city\"\n              [innerWidth]=\"innerWidth\"\n            ></app-country-flag>\n          </div>\n          <div\n            *ngIf=\"isEdit\"\n            class=\"delete-button-wrapper\"\n            [@slideInOut]\n            (click)=\"delete(city)\"\n          >\n            <a\n              id=\"delete-button\"\n              href=\"#\"\n              class=\"delete-button\"\n              [ngClass]=\"{ isEdit: isEdit }\"\n              >Delete</a\n            >\n          </div>\n        </div>\n      </div>\n    </section>\n  </main>\n</div>\n"
 
 /***/ }),
 
@@ -411,6 +422,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _content_wrapper_content_wrapper_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./content-wrapper/content-wrapper.component */ "./src/app/content-wrapper/content-wrapper.component.ts");
+
 
 
 
@@ -420,11 +433,11 @@ var routes = [
         redirectTo: "world-clock",
         pathMatch: "full",
     },
-    // {
-    //   path: "world-clock",
-    //   component: AppComponent,
-    //   data: { title: "World Clock" },
-    // },
+    {
+        path: "world-clock",
+        component: _content_wrapper_content_wrapper_component__WEBPACK_IMPORTED_MODULE_3__["ContentWrapperComponent"],
+        data: { title: "World Clock" },
+    },
     { path: "**", redirectTo: "/world-clock", pathMatch: "full" },
 ];
 var AppRoutingModule = /** @class */ (function () {
@@ -466,98 +479,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppComponent", function() { return AppComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/material/dialog */ "./node_modules/@angular/material/esm5/dialog.es5.js");
-/* harmony import */ var _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @fortawesome/free-solid-svg-icons */ "./node_modules/@fortawesome/free-solid-svg-icons/index.es.js");
-/* harmony import */ var _search_search_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./search/search.component */ "./src/app/search/search.component.ts");
-/* harmony import */ var _angular_animations__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/animations */ "./node_modules/@angular/animations/fesm5/animations.js");
-
-
-
-
 
 
 var AppComponent = /** @class */ (function () {
-    function AppComponent(dialog) {
-        this.dialog = dialog;
-        this.title = "clock-project";
-        this.faPlus = _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__["faPlus"];
-        this.cities = [];
-        this.isEdit = false;
+    function AppComponent() {
     }
-    AppComponent.prototype.ngOnInit = function () {
-        var savedCities = JSON.parse(localStorage.getItem("cities"));
-        if (savedCities && savedCities.length) {
-            this.cities = savedCities;
-        }
-        this.innerWidth = window.innerWidth;
-    };
-    AppComponent.prototype.onResize = function (event) {
-        this.innerWidth = window.innerWidth;
-        console.log(this.innerWidth);
-    };
-    AppComponent.prototype.ngAfterViewInit = function () { };
-    AppComponent.prototype.ngOnDestroy = function () {
-        this.keyUpSubscription.unsubscribe();
-    };
-    AppComponent.prototype.add = function () {
-        var _this = this;
-        this.isEdit = false;
-        this.dialogRef = this.dialog.open(_search_search_component__WEBPACK_IMPORTED_MODULE_4__["SearchComponent"], {
-            width: "600px",
-            minHeight: "500px",
-            disableClose: true,
-            panelClass: "custom-modalbox",
-        });
-        this.dialogRef.afterClosed().subscribe(function (result) {
-            if (result) {
-                var selectedCity_1 = _this.dialogRef.componentInstance.selectedCity;
-                // if found, returns the country object, else returns undefined
-                var existedCity = _this.cities.find(function (city) { return city["capital"] === selectedCity_1.capital; });
-                // if it's a new city, add it.
-                if (!existedCity) {
-                    _this.cities.push(selectedCity_1);
-                }
-                localStorage.setItem("cities", JSON.stringify(_this.cities));
-            }
-        });
-    };
-    AppComponent.prototype.action = function (action) {
-        if (action === "edit") {
-            this.isEdit = true;
-        }
-        else {
-            this.isEdit = false;
-        }
-    };
-    AppComponent.prototype.delete = function (city) {
-        var citiesArr = Object.assign([], this.cities);
-        this.cities = citiesArr.filter(function (ct) { return ct["capital"] !== city["capital"]; });
-        localStorage.setItem("cities", JSON.stringify(this.cities));
-    };
-    AppComponent.prototype.getTimerEvent = function (event) {
-        if (event) {
-            console.log(event);
-        }
-    };
-    AppComponent.ctorParameters = function () { return [
-        { type: _angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MatDialog"] }
-    ]; };
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["HostListener"])("window:resize", ["$event"])
-    ], AppComponent.prototype, "onResize", null);
     AppComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: "app-root",
             template: __webpack_require__(/*! raw-loader!./app.component.html */ "./node_modules/raw-loader/index.js!./src/app/app.component.html"),
-            animations: [
-                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_5__["trigger"])("slideInOut", [
-                    Object(_angular_animations__WEBPACK_IMPORTED_MODULE_5__["transition"])(":enter", [
-                        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_5__["style"])({ opacity: 0 }),
-                        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_5__["animate"])("800ms", Object(_angular_animations__WEBPACK_IMPORTED_MODULE_5__["style"])({ opacity: 1 })),
-                    ]),
-                    Object(_angular_animations__WEBPACK_IMPORTED_MODULE_5__["transition"])(":leave", [Object(_angular_animations__WEBPACK_IMPORTED_MODULE_5__["animate"])("800ms", Object(_angular_animations__WEBPACK_IMPORTED_MODULE_5__["style"])({ opacity: 0 }))]),
-                ]),
-            ],
             styles: [__webpack_require__(/*! ./app.component.scss */ "./src/app/app.component.scss")]
         })
     ], AppComponent);
@@ -596,6 +526,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @angular/platform-browser/animations */ "./node_modules/@angular/platform-browser/fesm5/animations.js");
 /* harmony import */ var _country_flag_country_flag_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./country-flag/country-flag.component */ "./src/app/country-flag/country-flag.component.ts");
 /* harmony import */ var _footer_footer_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./footer/footer.component */ "./src/app/footer/footer.component.ts");
+/* harmony import */ var _content_wrapper_content_wrapper_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./content-wrapper/content-wrapper.component */ "./src/app/content-wrapper/content-wrapper.component.ts");
+
 
 
 
@@ -627,6 +559,7 @@ var AppModule = /** @class */ (function () {
                 _search_search_component__WEBPACK_IMPORTED_MODULE_12__["SearchComponent"],
                 _country_flag_country_flag_component__WEBPACK_IMPORTED_MODULE_16__["CountryFlagComponent"],
                 _footer_footer_component__WEBPACK_IMPORTED_MODULE_17__["FooterComponent"],
+                _content_wrapper_content_wrapper_component__WEBPACK_IMPORTED_MODULE_18__["ContentWrapperComponent"],
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
@@ -1068,6 +1001,129 @@ var CanvasClockComponent = /** @class */ (function () {
         })
     ], CanvasClockComponent);
     return CanvasClockComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/content-wrapper/content-wrapper.component.scss":
+/*!****************************************************************!*\
+  !*** ./src/app/content-wrapper/content-wrapper.component.scss ***!
+  \****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ".actions-wrapper {\n  display: -webkit-box;\n  display: flex;\n  -webkit-box-pack: justify;\n          justify-content: space-between;\n  font-size: x-large;\n  font-weight: 900;\n  margin: 0px 6px 0 6px;\n}\n\n.edit,\n.add {\n  cursor: pointer;\n  color: #eeeeee;\n  margin: 1rem;\n}\n\n.header {\n  display: -webkit-box;\n  display: flex;\n  -webkit-box-pack: center;\n          justify-content: center;\n  color: #eeeeee;\n}\n\n.cities-wrapper {\n  min-height: 800px;\n}\n\n.clock-wrapper {\n  display: -webkit-box;\n  display: flex;\n  background: #bdbdbd;\n  margin-bottom: 0.5rem;\n  width: 100%;\n}\n\n.add-block {\n  grid-gap: 0.5em;\n  display: grid;\n  grid-template-columns: 30% 70%;\n  margin-bottom: 0.5rem;\n  width: 80%;\n}\n\n.flag {\n  width: 20%;\n}\n\n.delete-button-wrapper {\n  display: -webkit-box;\n  display: flex;\n  -webkit-box-pack: center;\n          justify-content: center;\n  -webkit-box-align: center;\n          align-items: center;\n  background-color: red;\n  cursor: pointer;\n  width: 20%;\n}\n\n.delete-button {\n  text-decoration: unset;\n  font-size: x-large;\n  color: white;\n}\n\n@media screen and (min-width: 769px) and (max-width: 1170px) {\n  .cities-wrapper {\n    width: 700px;\n  }\n\n  .add-block {\n    margin-bottom: 0;\n    margin: 0;\n  }\n\n  .edit,\n.add {\n    margin: 0;\n  }\n}\n\n@media screen and (max-width: 415px) {\n  .clock-wrapper {\n    height: 4.5rem;\n  }\n\n  .actions-wrapper {\n    display: -webkit-box;\n    display: flex;\n    -webkit-box-pack: justify;\n            justify-content: space-between;\n    font-size: x-large;\n    font-weight: 900;\n    margin: 0px 6px 0 6px;\n  }\n\n  .cities-wrapper {\n    width: 414px;\n  }\n\n  .add-block {\n    display: -webkit-box;\n    display: flex;\n    font-size: x-large;\n    font-weight: 900;\n    width: 50%;\n    height: 1rem;\n  }\n\n  .add-block.isEdit {\n    width: 80%;\n  }\n\n  .canvas-clock {\n    visibility: hidden;\n    width: 0;\n  }\n\n  .flag {\n    width: 50%;\n  }\n\n  .flag.isEdit {\n    width: auto;\n  }\n\n  .delete-button {\n    font-size: large;\n  }\n}\n\n@media screen and (max-width: 376px) {\n  .clock-wrapper {\n    height: 4.5rem;\n  }\n\n  .actions-wrapper {\n    display: -webkit-box;\n    display: flex;\n    -webkit-box-pack: justify;\n            justify-content: space-between;\n    font-size: x-large;\n    font-weight: 900;\n    margin: 0px 6px 0 6px;\n  }\n\n  .cities-wrapper {\n    width: 375px;\n  }\n\n  .add-block {\n    display: -webkit-box;\n    display: flex;\n    font-size: x-large;\n    font-weight: 900;\n    width: 50%;\n    height: 1rem;\n  }\n\n  .add-block.isEdit {\n    width: 80%;\n  }\n\n  .canvas-clock {\n    visibility: hidden;\n    width: 0;\n  }\n\n  .flag {\n    width: 50%;\n  }\n\n  .flag.isEdit {\n    width: auto;\n  }\n\n  .delete-button {\n    font-size: large;\n  }\n}\n\n@media screen and (max-width: 321px) {\n  .cities-wrapper {\n    width: 320px;\n  }\n}\n\n@media screen and (max-width: 280px) {\n  .actions-wrapper {\n    display: -webkit-box;\n    display: flex;\n    -webkit-box-pack: justify;\n            justify-content: space-between;\n    font-size: x-large;\n    font-weight: 900;\n    margin: 0px 6px 0 6px;\n  }\n\n  .cities-wrapper {\n    width: 280px;\n  }\n\n  .delete-button {\n    font-size: large;\n  }\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29udGVudC13cmFwcGVyL0M6XFxVc2Vyc1xccm9tYW4uemFkb3JvdlxcRGVza3RvcFxcQW5ndWxhclxcc2FtcGxlX3Byb2plY3RzXFxjbG9jay1wcm9qZWN0L3NyY1xcYXBwXFxjb250ZW50LXdyYXBwZXJcXGNvbnRlbnQtd3JhcHBlci5jb21wb25lbnQuc2NzcyIsInNyYy9hcHAvY29udGVudC13cmFwcGVyL2NvbnRlbnQtd3JhcHBlci5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLG9CQUFBO0VBQUEsYUFBQTtFQUNBLHlCQUFBO1VBQUEsOEJBQUE7RUFDQSxrQkFBQTtFQUNBLGdCQUFBO0VBQ0EscUJBQUE7QUNDRjs7QURFQTs7RUFFRSxlQUFBO0VBQ0EsY0FBQTtFQUNBLFlBQUE7QUNDRjs7QURLQTtFQUNFLG9CQUFBO0VBQUEsYUFBQTtFQUNBLHdCQUFBO1VBQUEsdUJBQUE7RUFDQSxjQUFBO0FDRkY7O0FES0E7RUFDRSxpQkFBQTtBQ0ZGOztBREtBO0VBQ0Usb0JBQUE7RUFBQSxhQUFBO0VBQ0EsbUJBQUE7RUFDQSxxQkFBQTtFQUNBLFdBQUE7QUNGRjs7QURVQTtFQUNFLGVBQUE7RUFDQSxhQUFBO0VBQ0EsOEJBQUE7RUFDQSxxQkFBQTtFQUNBLFVBQUE7QUNSRjs7QURXQTtFQUNFLFVBQUE7QUNSRjs7QURXQTtFQUNFLG9CQUFBO0VBQUEsYUFBQTtFQUNBLHdCQUFBO1VBQUEsdUJBQUE7RUFDQSx5QkFBQTtVQUFBLG1CQUFBO0VBQ0EscUJBQUE7RUFDQSxlQUFBO0VBQ0EsVUFBQTtBQ1JGOztBRFdBO0VBQ0Usc0JBQUE7RUFDQSxrQkFBQTtFQUNBLFlBQUE7QUNSRjs7QURjQTtFQUNFO0lBQ0UsWUFBQTtFQ1hGOztFRGNBO0lBQ0UsZ0JBQUE7SUFDQSxTQUFBO0VDWEY7O0VEY0E7O0lBRUUsU0FBQTtFQ1hGO0FBQ0Y7O0FEaUJBO0VBQ0U7SUFDRSxjQUFBO0VDZkY7O0VEaUJBO0lBQ0Usb0JBQUE7SUFBQSxhQUFBO0lBQ0EseUJBQUE7WUFBQSw4QkFBQTtJQUNBLGtCQUFBO0lBQ0EsZ0JBQUE7SUFDQSxxQkFBQTtFQ2RGOztFRGlCQTtJQUNFLFlBQUE7RUNkRjs7RURpQkE7SUFDRSxvQkFBQTtJQUFBLGFBQUE7SUFDQSxrQkFBQTtJQUNBLGdCQUFBO0lBQ0EsVUFBQTtJQUNBLFlBQUE7RUNkRjs7RURpQkE7SUFDRSxVQUFBO0VDZEY7O0VEaUJBO0lBQ0Usa0JBQUE7SUFDQSxRQUFBO0VDZEY7O0VEaUJBO0lBQ0UsVUFBQTtFQ2RGOztFRGlCQTtJQUNFLFdBQUE7RUNkRjs7RURpQkE7SUFDRSxnQkFBQTtFQ2RGO0FBQ0Y7O0FEaUJBO0VBQ0U7SUFDRSxjQUFBO0VDZkY7O0VEaUJBO0lBQ0Usb0JBQUE7SUFBQSxhQUFBO0lBQ0EseUJBQUE7WUFBQSw4QkFBQTtJQUNBLGtCQUFBO0lBQ0EsZ0JBQUE7SUFDQSxxQkFBQTtFQ2RGOztFRGlCQTtJQUNFLFlBQUE7RUNkRjs7RURpQkE7SUFDRSxvQkFBQTtJQUFBLGFBQUE7SUFDQSxrQkFBQTtJQUNBLGdCQUFBO0lBQ0EsVUFBQTtJQUNBLFlBQUE7RUNkRjs7RURpQkE7SUFDRSxVQUFBO0VDZEY7O0VEaUJBO0lBQ0Usa0JBQUE7SUFDQSxRQUFBO0VDZEY7O0VEaUJBO0lBQ0UsVUFBQTtFQ2RGOztFRGlCQTtJQUNFLFdBQUE7RUNkRjs7RURpQkE7SUFDRSxnQkFBQTtFQ2RGO0FBQ0Y7O0FEaUJBO0VBQ0U7SUFDRSxZQUFBO0VDZkY7QUFDRjs7QURrQkE7RUFDRTtJQUNFLG9CQUFBO0lBQUEsYUFBQTtJQUNBLHlCQUFBO1lBQUEsOEJBQUE7SUFDQSxrQkFBQTtJQUNBLGdCQUFBO0lBQ0EscUJBQUE7RUNoQkY7O0VEbUJBO0lBQ0UsWUFBQTtFQ2hCRjs7RURtQkE7SUFDRSxnQkFBQTtFQ2hCRjtBQUNGIiwiZmlsZSI6InNyYy9hcHAvY29udGVudC13cmFwcGVyL2NvbnRlbnQtd3JhcHBlci5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5hY3Rpb25zLXdyYXBwZXIge1xyXG4gIGRpc3BsYXk6IGZsZXg7XHJcbiAganVzdGlmeS1jb250ZW50OiBzcGFjZS1iZXR3ZWVuO1xyXG4gIGZvbnQtc2l6ZTogeC1sYXJnZTtcclxuICBmb250LXdlaWdodDogOTAwO1xyXG4gIG1hcmdpbjogMHB4IDZweCAwIDZweDtcclxufVxyXG5cclxuLmVkaXQsXHJcbi5hZGQge1xyXG4gIGN1cnNvcjogcG9pbnRlcjtcclxuICBjb2xvcjogI2VlZWVlZTtcclxuICBtYXJnaW46IDFyZW07XHJcbn1cclxuXHJcbi5tYWluLWNvbnRlbnQtd3JhcHBlciB7XHJcbn1cclxuXHJcbi5oZWFkZXIge1xyXG4gIGRpc3BsYXk6IGZsZXg7XHJcbiAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XHJcbiAgY29sb3I6ICNlZWVlZWU7XHJcbn1cclxuXHJcbi5jaXRpZXMtd3JhcHBlciB7XHJcbiAgbWluLWhlaWdodDogODAwcHg7XHJcbn1cclxuXHJcbi5jbG9jay13cmFwcGVyIHtcclxuICBkaXNwbGF5OiBmbGV4O1xyXG4gIGJhY2tncm91bmQ6ICNiZGJkYmQ7XHJcbiAgbWFyZ2luLWJvdHRvbTogMC41cmVtO1xyXG4gIHdpZHRoOiAxMDAlO1xyXG4gIC5jYW52YXMtY2xvY2sge1xyXG4gIH1cclxuXHJcbiAgLmRpZ2l0YWwtY2xvY2sge1xyXG4gIH1cclxufVxyXG5cclxuLmFkZC1ibG9jayB7XHJcbiAgZ3JpZC1nYXA6IDAuNWVtO1xyXG4gIGRpc3BsYXk6IGdyaWQ7XHJcbiAgZ3JpZC10ZW1wbGF0ZS1jb2x1bW5zOiAzMCUgNzAlO1xyXG4gIG1hcmdpbi1ib3R0b206IDAuNXJlbTtcclxuICB3aWR0aDogODAlO1xyXG59XHJcblxyXG4uZmxhZyB7XHJcbiAgd2lkdGg6IDIwJTtcclxufVxyXG5cclxuLmRlbGV0ZS1idXR0b24td3JhcHBlciB7XHJcbiAgZGlzcGxheTogZmxleDtcclxuICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcclxuICBhbGlnbi1pdGVtczogY2VudGVyO1xyXG4gIGJhY2tncm91bmQtY29sb3I6IHJlZDtcclxuICBjdXJzb3I6IHBvaW50ZXI7XHJcbiAgd2lkdGg6IDIwJTtcclxufVxyXG5cclxuLmRlbGV0ZS1idXR0b24ge1xyXG4gIHRleHQtZGVjb3JhdGlvbjogdW5zZXQ7XHJcbiAgZm9udC1zaXplOiB4LWxhcmdlO1xyXG4gIGNvbG9yOiB3aGl0ZTtcclxufVxyXG5cclxuQG1lZGlhIHNjcmVlbiBhbmQgKG1pbi13aWR0aDogMTE3MXB4KSB7XHJcbn1cclxuXHJcbkBtZWRpYSBzY3JlZW4gYW5kIChtaW4td2lkdGg6IDc2OXB4KSBhbmQgKG1heC13aWR0aDogMTE3MHB4KSB7XHJcbiAgLmNpdGllcy13cmFwcGVyIHtcclxuICAgIHdpZHRoOiA3MDBweDtcclxuICB9XHJcblxyXG4gIC5hZGQtYmxvY2sge1xyXG4gICAgbWFyZ2luLWJvdHRvbTogMDtcclxuICAgIG1hcmdpbjogMDtcclxuICB9XHJcblxyXG4gIC5lZGl0LFxyXG4gIC5hZGQge1xyXG4gICAgbWFyZ2luOiAwO1xyXG4gIH1cclxufVxyXG5cclxuQG1lZGlhIHNjcmVlbiBhbmQgKG1heC13aWR0aDogNzY4cHgpIHtcclxufVxyXG5cclxuQG1lZGlhIHNjcmVlbiBhbmQgKG1heC13aWR0aDogNDE1cHgpIHtcclxuICAuY2xvY2std3JhcHBlciB7XHJcbiAgICBoZWlnaHQ6IDQuNXJlbTtcclxuICB9XHJcbiAgLmFjdGlvbnMtd3JhcHBlciB7XHJcbiAgICBkaXNwbGF5OiBmbGV4O1xyXG4gICAganVzdGlmeS1jb250ZW50OiBzcGFjZS1iZXR3ZWVuO1xyXG4gICAgZm9udC1zaXplOiB4LWxhcmdlO1xyXG4gICAgZm9udC13ZWlnaHQ6IDkwMDtcclxuICAgIG1hcmdpbjogMHB4IDZweCAwIDZweDtcclxuICB9XHJcblxyXG4gIC5jaXRpZXMtd3JhcHBlciB7XHJcbiAgICB3aWR0aDogNDE0cHg7XHJcbiAgfVxyXG5cclxuICAuYWRkLWJsb2NrIHtcclxuICAgIGRpc3BsYXk6IGZsZXg7XHJcbiAgICBmb250LXNpemU6IHgtbGFyZ2U7XHJcbiAgICBmb250LXdlaWdodDogOTAwO1xyXG4gICAgd2lkdGg6IDUwJTtcclxuICAgIGhlaWdodDogMXJlbTtcclxuICB9XHJcblxyXG4gIC5hZGQtYmxvY2suaXNFZGl0IHtcclxuICAgIHdpZHRoOiA4MCU7XHJcbiAgfVxyXG5cclxuICAuY2FudmFzLWNsb2NrIHtcclxuICAgIHZpc2liaWxpdHk6IGhpZGRlbjtcclxuICAgIHdpZHRoOiAwO1xyXG4gIH1cclxuXHJcbiAgLmZsYWcge1xyXG4gICAgd2lkdGg6IDUwJTtcclxuICB9XHJcblxyXG4gIC5mbGFnLmlzRWRpdCB7XHJcbiAgICB3aWR0aDogYXV0bztcclxuICB9XHJcblxyXG4gIC5kZWxldGUtYnV0dG9uIHtcclxuICAgIGZvbnQtc2l6ZTogbGFyZ2U7XHJcbiAgfVxyXG59XHJcblxyXG5AbWVkaWEgc2NyZWVuIGFuZCAobWF4LXdpZHRoOiAzNzZweCkge1xyXG4gIC5jbG9jay13cmFwcGVyIHtcclxuICAgIGhlaWdodDogNC41cmVtO1xyXG4gIH1cclxuICAuYWN0aW9ucy13cmFwcGVyIHtcclxuICAgIGRpc3BsYXk6IGZsZXg7XHJcbiAgICBqdXN0aWZ5LWNvbnRlbnQ6IHNwYWNlLWJldHdlZW47XHJcbiAgICBmb250LXNpemU6IHgtbGFyZ2U7XHJcbiAgICBmb250LXdlaWdodDogOTAwO1xyXG4gICAgbWFyZ2luOiAwcHggNnB4IDAgNnB4O1xyXG4gIH1cclxuXHJcbiAgLmNpdGllcy13cmFwcGVyIHtcclxuICAgIHdpZHRoOiAzNzVweDtcclxuICB9XHJcblxyXG4gIC5hZGQtYmxvY2sge1xyXG4gICAgZGlzcGxheTogZmxleDtcclxuICAgIGZvbnQtc2l6ZTogeC1sYXJnZTtcclxuICAgIGZvbnQtd2VpZ2h0OiA5MDA7XHJcbiAgICB3aWR0aDogNTAlO1xyXG4gICAgaGVpZ2h0OiAxcmVtO1xyXG4gIH1cclxuXHJcbiAgLmFkZC1ibG9jay5pc0VkaXQge1xyXG4gICAgd2lkdGg6IDgwJTtcclxuICB9XHJcblxyXG4gIC5jYW52YXMtY2xvY2sge1xyXG4gICAgdmlzaWJpbGl0eTogaGlkZGVuO1xyXG4gICAgd2lkdGg6IDA7XHJcbiAgfVxyXG5cclxuICAuZmxhZyB7XHJcbiAgICB3aWR0aDogNTAlO1xyXG4gIH1cclxuXHJcbiAgLmZsYWcuaXNFZGl0IHtcclxuICAgIHdpZHRoOiBhdXRvO1xyXG4gIH1cclxuXHJcbiAgLmRlbGV0ZS1idXR0b24ge1xyXG4gICAgZm9udC1zaXplOiBsYXJnZTtcclxuICB9XHJcbn1cclxuXHJcbkBtZWRpYSBzY3JlZW4gYW5kIChtYXgtd2lkdGg6IDMyMXB4KSB7XHJcbiAgLmNpdGllcy13cmFwcGVyIHtcclxuICAgIHdpZHRoOiAzMjBweDtcclxuICB9XHJcbn1cclxuXHJcbkBtZWRpYSBzY3JlZW4gYW5kIChtYXgtd2lkdGg6IDI4MHB4KSB7XHJcbiAgLmFjdGlvbnMtd3JhcHBlciB7XHJcbiAgICBkaXNwbGF5OiBmbGV4O1xyXG4gICAganVzdGlmeS1jb250ZW50OiBzcGFjZS1iZXR3ZWVuO1xyXG4gICAgZm9udC1zaXplOiB4LWxhcmdlO1xyXG4gICAgZm9udC13ZWlnaHQ6IDkwMDtcclxuICAgIG1hcmdpbjogMHB4IDZweCAwIDZweDtcclxuICB9XHJcblxyXG4gIC5jaXRpZXMtd3JhcHBlciB7XHJcbiAgICB3aWR0aDogMjgwcHg7XHJcbiAgfVxyXG5cclxuICAuZGVsZXRlLWJ1dHRvbiB7XHJcbiAgICBmb250LXNpemU6IGxhcmdlO1xyXG4gIH1cclxufVxyXG4iLCIuYWN0aW9ucy13cmFwcGVyIHtcbiAgZGlzcGxheTogZmxleDtcbiAganVzdGlmeS1jb250ZW50OiBzcGFjZS1iZXR3ZWVuO1xuICBmb250LXNpemU6IHgtbGFyZ2U7XG4gIGZvbnQtd2VpZ2h0OiA5MDA7XG4gIG1hcmdpbjogMHB4IDZweCAwIDZweDtcbn1cblxuLmVkaXQsXG4uYWRkIHtcbiAgY3Vyc29yOiBwb2ludGVyO1xuICBjb2xvcjogI2VlZWVlZTtcbiAgbWFyZ2luOiAxcmVtO1xufVxuXG4uaGVhZGVyIHtcbiAgZGlzcGxheTogZmxleDtcbiAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XG4gIGNvbG9yOiAjZWVlZWVlO1xufVxuXG4uY2l0aWVzLXdyYXBwZXIge1xuICBtaW4taGVpZ2h0OiA4MDBweDtcbn1cblxuLmNsb2NrLXdyYXBwZXIge1xuICBkaXNwbGF5OiBmbGV4O1xuICBiYWNrZ3JvdW5kOiAjYmRiZGJkO1xuICBtYXJnaW4tYm90dG9tOiAwLjVyZW07XG4gIHdpZHRoOiAxMDAlO1xufVxuLmFkZC1ibG9jayB7XG4gIGdyaWQtZ2FwOiAwLjVlbTtcbiAgZGlzcGxheTogZ3JpZDtcbiAgZ3JpZC10ZW1wbGF0ZS1jb2x1bW5zOiAzMCUgNzAlO1xuICBtYXJnaW4tYm90dG9tOiAwLjVyZW07XG4gIHdpZHRoOiA4MCU7XG59XG5cbi5mbGFnIHtcbiAgd2lkdGg6IDIwJTtcbn1cblxuLmRlbGV0ZS1idXR0b24td3JhcHBlciB7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGp1c3RpZnktY29udGVudDogY2VudGVyO1xuICBhbGlnbi1pdGVtczogY2VudGVyO1xuICBiYWNrZ3JvdW5kLWNvbG9yOiByZWQ7XG4gIGN1cnNvcjogcG9pbnRlcjtcbiAgd2lkdGg6IDIwJTtcbn1cblxuLmRlbGV0ZS1idXR0b24ge1xuICB0ZXh0LWRlY29yYXRpb246IHVuc2V0O1xuICBmb250LXNpemU6IHgtbGFyZ2U7XG4gIGNvbG9yOiB3aGl0ZTtcbn1cblxuQG1lZGlhIHNjcmVlbiBhbmQgKG1pbi13aWR0aDogNzY5cHgpIGFuZCAobWF4LXdpZHRoOiAxMTcwcHgpIHtcbiAgLmNpdGllcy13cmFwcGVyIHtcbiAgICB3aWR0aDogNzAwcHg7XG4gIH1cblxuICAuYWRkLWJsb2NrIHtcbiAgICBtYXJnaW4tYm90dG9tOiAwO1xuICAgIG1hcmdpbjogMDtcbiAgfVxuXG4gIC5lZGl0LFxuLmFkZCB7XG4gICAgbWFyZ2luOiAwO1xuICB9XG59XG5AbWVkaWEgc2NyZWVuIGFuZCAobWF4LXdpZHRoOiA0MTVweCkge1xuICAuY2xvY2std3JhcHBlciB7XG4gICAgaGVpZ2h0OiA0LjVyZW07XG4gIH1cblxuICAuYWN0aW9ucy13cmFwcGVyIHtcbiAgICBkaXNwbGF5OiBmbGV4O1xuICAgIGp1c3RpZnktY29udGVudDogc3BhY2UtYmV0d2VlbjtcbiAgICBmb250LXNpemU6IHgtbGFyZ2U7XG4gICAgZm9udC13ZWlnaHQ6IDkwMDtcbiAgICBtYXJnaW46IDBweCA2cHggMCA2cHg7XG4gIH1cblxuICAuY2l0aWVzLXdyYXBwZXIge1xuICAgIHdpZHRoOiA0MTRweDtcbiAgfVxuXG4gIC5hZGQtYmxvY2sge1xuICAgIGRpc3BsYXk6IGZsZXg7XG4gICAgZm9udC1zaXplOiB4LWxhcmdlO1xuICAgIGZvbnQtd2VpZ2h0OiA5MDA7XG4gICAgd2lkdGg6IDUwJTtcbiAgICBoZWlnaHQ6IDFyZW07XG4gIH1cblxuICAuYWRkLWJsb2NrLmlzRWRpdCB7XG4gICAgd2lkdGg6IDgwJTtcbiAgfVxuXG4gIC5jYW52YXMtY2xvY2sge1xuICAgIHZpc2liaWxpdHk6IGhpZGRlbjtcbiAgICB3aWR0aDogMDtcbiAgfVxuXG4gIC5mbGFnIHtcbiAgICB3aWR0aDogNTAlO1xuICB9XG5cbiAgLmZsYWcuaXNFZGl0IHtcbiAgICB3aWR0aDogYXV0bztcbiAgfVxuXG4gIC5kZWxldGUtYnV0dG9uIHtcbiAgICBmb250LXNpemU6IGxhcmdlO1xuICB9XG59XG5AbWVkaWEgc2NyZWVuIGFuZCAobWF4LXdpZHRoOiAzNzZweCkge1xuICAuY2xvY2std3JhcHBlciB7XG4gICAgaGVpZ2h0OiA0LjVyZW07XG4gIH1cblxuICAuYWN0aW9ucy13cmFwcGVyIHtcbiAgICBkaXNwbGF5OiBmbGV4O1xuICAgIGp1c3RpZnktY29udGVudDogc3BhY2UtYmV0d2VlbjtcbiAgICBmb250LXNpemU6IHgtbGFyZ2U7XG4gICAgZm9udC13ZWlnaHQ6IDkwMDtcbiAgICBtYXJnaW46IDBweCA2cHggMCA2cHg7XG4gIH1cblxuICAuY2l0aWVzLXdyYXBwZXIge1xuICAgIHdpZHRoOiAzNzVweDtcbiAgfVxuXG4gIC5hZGQtYmxvY2sge1xuICAgIGRpc3BsYXk6IGZsZXg7XG4gICAgZm9udC1zaXplOiB4LWxhcmdlO1xuICAgIGZvbnQtd2VpZ2h0OiA5MDA7XG4gICAgd2lkdGg6IDUwJTtcbiAgICBoZWlnaHQ6IDFyZW07XG4gIH1cblxuICAuYWRkLWJsb2NrLmlzRWRpdCB7XG4gICAgd2lkdGg6IDgwJTtcbiAgfVxuXG4gIC5jYW52YXMtY2xvY2sge1xuICAgIHZpc2liaWxpdHk6IGhpZGRlbjtcbiAgICB3aWR0aDogMDtcbiAgfVxuXG4gIC5mbGFnIHtcbiAgICB3aWR0aDogNTAlO1xuICB9XG5cbiAgLmZsYWcuaXNFZGl0IHtcbiAgICB3aWR0aDogYXV0bztcbiAgfVxuXG4gIC5kZWxldGUtYnV0dG9uIHtcbiAgICBmb250LXNpemU6IGxhcmdlO1xuICB9XG59XG5AbWVkaWEgc2NyZWVuIGFuZCAobWF4LXdpZHRoOiAzMjFweCkge1xuICAuY2l0aWVzLXdyYXBwZXIge1xuICAgIHdpZHRoOiAzMjBweDtcbiAgfVxufVxuQG1lZGlhIHNjcmVlbiBhbmQgKG1heC13aWR0aDogMjgwcHgpIHtcbiAgLmFjdGlvbnMtd3JhcHBlciB7XG4gICAgZGlzcGxheTogZmxleDtcbiAgICBqdXN0aWZ5LWNvbnRlbnQ6IHNwYWNlLWJldHdlZW47XG4gICAgZm9udC1zaXplOiB4LWxhcmdlO1xuICAgIGZvbnQtd2VpZ2h0OiA5MDA7XG4gICAgbWFyZ2luOiAwcHggNnB4IDAgNnB4O1xuICB9XG5cbiAgLmNpdGllcy13cmFwcGVyIHtcbiAgICB3aWR0aDogMjgwcHg7XG4gIH1cblxuICAuZGVsZXRlLWJ1dHRvbiB7XG4gICAgZm9udC1zaXplOiBsYXJnZTtcbiAgfVxufSJdfQ== */"
+
+/***/ }),
+
+/***/ "./src/app/content-wrapper/content-wrapper.component.ts":
+/*!**************************************************************!*\
+  !*** ./src/app/content-wrapper/content-wrapper.component.ts ***!
+  \**************************************************************/
+/*! exports provided: ContentWrapperComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ContentWrapperComponent", function() { return ContentWrapperComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/material/dialog */ "./node_modules/@angular/material/esm5/dialog.es5.js");
+/* harmony import */ var _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @fortawesome/free-solid-svg-icons */ "./node_modules/@fortawesome/free-solid-svg-icons/index.es.js");
+/* harmony import */ var _search_search_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../search/search.component */ "./src/app/search/search.component.ts");
+/* harmony import */ var _angular_animations__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/animations */ "./node_modules/@angular/animations/fesm5/animations.js");
+
+
+
+
+
+
+var ContentWrapperComponent = /** @class */ (function () {
+    function ContentWrapperComponent(dialog) {
+        this.dialog = dialog;
+        this.faPlus = _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__["faPlus"];
+        this.cities = [];
+        this.isEdit = false;
+    }
+    ContentWrapperComponent.prototype.ngOnInit = function () {
+        var savedCities = JSON.parse(localStorage.getItem("cities"));
+        if (savedCities && savedCities.length) {
+            this.cities = savedCities;
+        }
+        this.innerWidth = window.innerWidth;
+    };
+    ContentWrapperComponent.prototype.onResize = function (event) {
+        this.innerWidth = window.innerWidth;
+        console.log(this.innerWidth);
+    };
+    ContentWrapperComponent.prototype.ngOnDestroy = function () {
+        this.keyUpSubscription.unsubscribe();
+    };
+    ContentWrapperComponent.prototype.add = function () {
+        var _this = this;
+        this.isEdit = false;
+        this.dialogRef = this.dialog.open(_search_search_component__WEBPACK_IMPORTED_MODULE_4__["SearchComponent"], {
+            width: "600px",
+            minHeight: "500px",
+            disableClose: true,
+            panelClass: "custom-modalbox",
+        });
+        this.dialogRef.afterClosed().subscribe(function (result) {
+            if (result) {
+                var selectedCity_1 = _this.dialogRef.componentInstance.selectedCity;
+                // if found, returns the country object, else returns undefined
+                var existedCity = _this.cities.find(function (city) { return city["capital"] === selectedCity_1.capital; });
+                // if it's a new city, add it.
+                if (!existedCity) {
+                    _this.cities.push(selectedCity_1);
+                }
+                localStorage.setItem("cities", JSON.stringify(_this.cities));
+            }
+        });
+    };
+    ContentWrapperComponent.prototype.action = function (action) {
+        if (action === "edit") {
+            this.isEdit = true;
+        }
+        else {
+            this.isEdit = false;
+        }
+    };
+    ContentWrapperComponent.prototype.delete = function (city) {
+        var citiesArr = Object.assign([], this.cities);
+        this.cities = citiesArr.filter(function (ct) { return ct["capital"] !== city["capital"]; });
+        localStorage.setItem("cities", JSON.stringify(this.cities));
+    };
+    ContentWrapperComponent.prototype.getTimerEvent = function (event) {
+        if (event) {
+            console.log(event);
+        }
+    };
+    ContentWrapperComponent.ctorParameters = function () { return [
+        { type: _angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MatDialog"] }
+    ]; };
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["HostListener"])("window:resize", ["$event"])
+    ], ContentWrapperComponent.prototype, "onResize", null);
+    ContentWrapperComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: "app-content-wrapper",
+            template: __webpack_require__(/*! raw-loader!./content-wrapper.component.html */ "./node_modules/raw-loader/index.js!./src/app/content-wrapper/content-wrapper.component.html"),
+            animations: [
+                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_5__["trigger"])("slideInOut", [
+                    Object(_angular_animations__WEBPACK_IMPORTED_MODULE_5__["transition"])(":enter", [
+                        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_5__["style"])({ opacity: 0 }),
+                        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_5__["animate"])("800ms", Object(_angular_animations__WEBPACK_IMPORTED_MODULE_5__["style"])({ opacity: 1 })),
+                    ]),
+                    Object(_angular_animations__WEBPACK_IMPORTED_MODULE_5__["transition"])(":leave", [Object(_angular_animations__WEBPACK_IMPORTED_MODULE_5__["animate"])("800ms", Object(_angular_animations__WEBPACK_IMPORTED_MODULE_5__["style"])({ opacity: 0 }))]),
+                ]),
+            ],
+            styles: [__webpack_require__(/*! ./content-wrapper.component.scss */ "./src/app/content-wrapper/content-wrapper.component.scss")]
+        })
+    ], ContentWrapperComponent);
+    return ContentWrapperComponent;
 }());
 
 
