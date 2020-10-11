@@ -90,8 +90,13 @@ export class SearchComponent implements OnInit, OnDestroy {
 
   getAllCountriesData() {
     this.appService.getAllCountries().subscribe((res: Array<Object>) => {
+      let countries = res;
+      // removing countries without capital
+      let filteredCountries = countries.filter(
+        (country) => country["capital"] !== ""
+      );
       // sorting the list of cities by country capital
-      this.allCountries = res.sort((a, b) =>
+      this.allCountries = filteredCountries.sort((a, b) =>
         a["capital"] < b["capital"] ? -1 : a["capital"] > b["capital"] ? 1 : 0
       );
       this.countries = [...this.allCountries];
