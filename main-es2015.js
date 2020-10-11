@@ -328,7 +328,7 @@ webpackContext.id = "./node_modules/moment/locale sync recursive ^\\.\\/.*$";
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div id=\"bg-img\">\n  <header class=\"header\">\n    <h1>World Clock</h1>\n  </header>\n\n  <main>\n    <section class=\"actions-wrapper\">\n      <div class=\"\">\n        <a\n          *ngIf=\"cities.length && !isEdit\"\n          class=\"edit\"\n          (click)=\"action('edit')\"\n          >Edit</a\n        >\n        <a *ngIf=\"cities.length && isEdit\" class=\"edit\" (click)=\"action('done')\"\n          >Done</a\n        >\n      </div>\n      <div class=\"\">\n        <fa-icon class=\"add\" [icon]=\"faPlus\" (click)=\"add()\"></fa-icon>\n      </div>\n    </section>\n\n    <section class=\"main-content-wrapper\">\n      <div *ngIf=\"cities\" class=\"cities-wrapper\">\n        <div class=\"clock-wrapper\" *ngFor=\"let city of cities\">\n          <div class=\"add-block\" [ngClass]=\"{ isEdit: isEdit }\">\n            <div class=\"canvas-clock\">\n              <app-canvas-clock [city]=\"city\"></app-canvas-clock>\n            </div>\n            <div class=\"digital-clock\" [ngClass]=\"{ isEdit: isEdit }\">\n              <app-digital-clock-moment\n                [city]=\"city\"\n                [isEdit]=\"isEdit\"\n                (isTimerOn)=\"getTimerEvent($event)\"\n                [innerWidth]=\"innerWidth\"\n              ></app-digital-clock-moment>\n            </div>\n          </div>\n          <div *ngIf=\"!isEdit\" class=\"flag\" [ngClass]=\"{ isEdit: isEdit }\">\n            <app-country-flag\n              [city]=\"city\"\n              [innerWidth]=\"innerWidth\"\n            ></app-country-flag>\n          </div>\n          <div\n            *ngIf=\"isEdit\"\n            class=\"delete-button-wrapper\"\n            [@slideInOut]\n            (click)=\"delete(city)\"\n          >\n            <a\n              id=\"delete-button\"\n              href=\"#\"\n              class=\"delete-button\"\n              [ngClass]=\"{ isEdit: isEdit }\"\n              >Delete</a\n            >\n          </div>\n        </div>\n      </div>\n    </section>\n  </main>\n</div>\n\n<router-outlet></router-outlet>\n<app-footer></app-footer>\n"
+module.exports = "<div id=\"bg-img\">\n  <header class=\"header\">\n    <h1>World Clock</h1>\n  </header>\n\n  <main class=\"main-content-wrapper\">\n    <section class=\"actions-wrapper\">\n      <div class=\"\">\n        <a\n          *ngIf=\"cities.length && !isEdit\"\n          class=\"edit\"\n          (click)=\"action('edit')\"\n          >Edit</a\n        >\n        <a *ngIf=\"cities.length && isEdit\" class=\"edit\" (click)=\"action('done')\"\n          >Done</a\n        >\n      </div>\n      <div class=\"\">\n        <fa-icon class=\"add\" [icon]=\"faPlus\" (click)=\"add()\"></fa-icon>\n      </div>\n    </section>\n\n    <section class=\"\">\n      <div *ngIf=\"cities\" class=\"cities-wrapper\">\n        <div class=\"clock-wrapper\" *ngFor=\"let city of cities\">\n          <div class=\"add-block\" [ngClass]=\"{ isEdit: isEdit }\">\n            <div class=\"canvas-clock\">\n              <app-canvas-clock [city]=\"city\"></app-canvas-clock>\n            </div>\n            <div class=\"digital-clock\" [ngClass]=\"{ isEdit: isEdit }\">\n              <app-digital-clock-moment\n                [city]=\"city\"\n                [isEdit]=\"isEdit\"\n                (isTimerOn)=\"getTimerEvent($event)\"\n                [innerWidth]=\"innerWidth\"\n              ></app-digital-clock-moment>\n            </div>\n          </div>\n          <div *ngIf=\"!isEdit\" class=\"flag\" [ngClass]=\"{ isEdit: isEdit }\">\n            <app-country-flag\n              [city]=\"city\"\n              [innerWidth]=\"innerWidth\"\n            ></app-country-flag>\n          </div>\n          <div\n            *ngIf=\"isEdit\"\n            class=\"delete-button-wrapper\"\n            [@slideInOut]\n            (click)=\"delete(city)\"\n          >\n            <a\n              id=\"delete-button\"\n              href=\"#\"\n              class=\"delete-button\"\n              [ngClass]=\"{ isEdit: isEdit }\"\n              >Delete</a\n            >\n          </div>\n        </div>\n      </div>\n    </section>\n  </main>\n</div>\n\n<router-outlet></router-outlet>\n<app-footer></app-footer>\n"
 
 /***/ }),
 
@@ -411,8 +411,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
-/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
-
 
 
 
@@ -422,11 +420,11 @@ const routes = [
         redirectTo: "world-clock",
         pathMatch: "full",
     },
-    {
-        path: "world-clock",
-        component: _app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"],
-        data: { title: "World Clock" },
-    },
+    // {
+    //   path: "world-clock",
+    //   component: AppComponent,
+    //   data: { title: "World Clock" },
+    // },
     { path: "**", redirectTo: "/world-clock", pathMatch: "full" },
 ];
 let AppRoutingModule = class AppRoutingModule {
