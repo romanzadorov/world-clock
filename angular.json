@@ -17,9 +17,8 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/clock-project",
+            "outputPath": "dist",
             "index": "src/index.html",
-            "baseHref": "/world-clock/",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
