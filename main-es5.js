@@ -394,7 +394,7 @@ module.exports = "<div class=\"digital-clock\">{{format(hour)}}:{{format(minute)
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<footer id=\"main-footer\">Copyright &copy; 2020</footer>\n"
+module.exports = "<footer id=\"main-footer\">Copyright &copy; 2021</footer>\n"
 
 /***/ }),
 
